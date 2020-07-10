@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <?!= include ("style");?>
+    <title>Entrega de boletines</title>
+</head>
+<body>
+    <header>
+        <nav>
+        <div class="nav-wrapper blue darken-4" >
+           <a href="#" class="brand-logo">&nbsp;Entrega de boletines</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container ">
+        <div class="row">
+            <div class="col s12">
+              <div class="card-panel  z-depth-2">
+                <div class = "row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">class</i>
+                    <input type="text" id="grupo" class="autocomplete">
+                    <label for="grupo">Grupo del alumno</label>
+                  </div>
+                </div>
+                <div class = "row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" id="alumno" class="autocomplete">
+                    <label for="alumno">Nombre del alumno</label>
+                  </div>
+                </div>
+                <div class = "row">
+                  <div class="input-field center-align col s12">
+                    <button id = 'solicita' class="btn waves-effect waves-light blue darken-4" type="submit" name="action">Solicitar Boletín
+                    <i class="material-icons right">send</i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer blue darken-4 col s12" >
+          <div class="container white-text">
+          © 2020 Copyright Instituto Francisco Possenti
+          <a class="white-text right" href="#!" >Hecha con <i class="material-icons">favorite</i> y <i class="material-icons">code</i></a>
+          </div>
+    </footer>
+    <?!= include ("js");?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

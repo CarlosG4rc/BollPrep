@@ -1,0 +1,33 @@
+<script>
+    document.addEventListener('DOMContentLoaded',function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+    
+            document.addEventListener('DOMContentLoaded',function(){
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems);
+            });
+            google.script.run.withSuccessHandler(completarGrupo).completar();
+            document.getElementById('grupo').addEventListener('change',function(){
+                var clase = document.getElementById('grupo').value;
+                google.script.run.withSuccessHandler(completarNombre).autocompletar(clase);
+            })
+        });
+        document.getElementById('solicita').addEventListener('click',enviar);
+
+    function enviar(){
+        let infAlumno = {}
+        infAlumno.nombre = document.getElementById('alumno').value;
+        infAlumno.grupo = document.getElementById('grupo').value;
+        google.script.run.uClick(infAlumno);
+        alert("Revise los correos Institucionales del alumno y tutor, en caso de no recibir ningún correo en 10 min enviar mensaje a cgarcia@ifp.mx")
+    }
+    function completarGrupo(letras){
+        var autoCompletar = document.getElementById('grupo');
+        var instances = M.Autocomplete.init(autoCompletar, {data : letras});
+    }
+    function completarNombre(alumno){
+        var autoCompletar = document.getElementById('alumno');
+        var instances = M.Autocomplete.init(autoCompletar, {data : alumno});
+    }
+</script>
